@@ -11,12 +11,12 @@ function validateForm() {
     var mobile = document.contactForm.mobile.value;
     var country = document.contactForm.country.value;
     var gender = document.contactForm.gender.value;
-    var hobbies = [];
-    var checkboxes = document.getElementsByName("hobbies[]");
+    var technologies = [];
+    var checkboxes = document.getElementsByName("technologies[]");
     for(var i=0; i < checkboxes.length; i++) {
         if(checkboxes[i].checked) {
-            // Populate hobbies array with selected values
-            hobbies.push(checkboxes[i].value);
+            // Populate technologies array with selected values
+            technologies.push(checkboxes[i].value);
         }
     }
     
@@ -90,8 +90,8 @@ function validateForm() {
                           "Mobile Number: " + mobile + "\n" +
                           "Country: " + country + "\n" +
                           "Gender: " + gender + "\n";
-        if(hobbies.length) {
-            dataPreview += "Hobbies: " + hobbies.join(", ");
+        if(technologies.length) {
+            dataPreview += "Hobbies: " + technologies.join(", ");
         }
         // Display input data in a dialog box before submitting the form
         alert(dataPreview);
